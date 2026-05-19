@@ -33,3 +33,5 @@ build/
 .vscode/
 
 .jqwik-database
+/skills-lock.json
+/.agents/

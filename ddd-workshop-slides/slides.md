@@ -141,5 +141,23 @@ hide: false
 ---
 layout: image
 image: ../assets/backgrounds/thankyou.svg
+class: text-center
 ---
+
+<div class="absolute inset-0 flex flex-col items-center gap-10 z-10" style="padding-top: 13%;">
+
+<p style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; text-transform: uppercase; letter-spacing: 3px; color: #fff; margin: 0;">To go further</p>
+
+<div class="flex gap-24 justify-center items-start mt-6">
+  <div class="flex flex-col items-center gap-4">
+    <h3>Resources</h3>
+    <img src="./assets/resources_qr_code.svg" class="w-44 h-44" />
+  </div>
+  <div class="flex flex-col items-center gap-4">
+    <h3>Quiz</h3>
+    <img src="./assets/quiz_qr_code.svg" class="w-44 h-44" />
+  </div>
+</div>
+
+</div>
 
