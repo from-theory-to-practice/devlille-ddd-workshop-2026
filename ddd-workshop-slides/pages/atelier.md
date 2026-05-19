@@ -3,16 +3,22 @@ layout: center
 class: text-center
 ---
 
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
+
 ## Hands-on
+TODO rajouter tactical patterns
 
 <!--
-On va rentrer dans la partie tactique. Et plutôt que de présenter tous les concepts un par un, 
+On a fait la partie stratégique, on va rentrer dans la partie tactique. Et plutôt que de présenter tous les concepts un par un, 
 on va partir d'une approche naïve afin de les faire émerger au fur et à mesure.
 -->
+
 ---
 layout: center
 class: text-center
 ---
+
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## Scope and limitations
 
@@ -27,6 +33,8 @@ layout: center
 class: text-center
 ---
 
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
+
 ## Architecture
 
 <!--
@@ -39,23 +47,37 @@ TIMING: 20 min
 layout: center
 class: text-center
 ---
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 1. The Ad
 
 <br>
 <br>
 <br>
-```
-- A musician can publish an Ad to sell an instrument.
-- An Ad should have a title, an instrument, and a price.
-- An Ad can be sold
-- An Ad is available to sell until it is sold.
-```
+
+<div class="relative z-10">
+
+A musician can publish an Ad to sell an instrument.
+
+An Ad should have a title, an instrument, and a price.
+
+An Ad can be sold
+
+An Ad is available to sell until it is sold.
+</div>
 
 ---
 layout: image-right
 image: ../assets/bass.jpg
 ---
+
+
+<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
+
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## Entity
 
@@ -66,6 +88,8 @@ image: ../assets/bass.jpg
 <h3 v-click>identity</h3>
 <h3 v-click>lifecycle</h3>
 <h3 v-click>mutable</h3>
+
+</div>
 
 <!--
 Une entité est un objet qui a une identité propre et un cycle de vie.
@@ -85,22 +109,35 @@ TIMING: 35 min
 layout: center
 class: text-center
 ---
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 2. Price
 
 <br>
 <br>
 <br>
-```
-- A musician can apply a discount on the price of his ad.
-- The discount is a percentage of the price (between 0% and 100%).
-- A price cannot be negative.
-```
+
+<div class="relative z-10">
+
+A musician can apply a discount on the price of his ad.
+
+The discount is a percentage of the price (between 0% and 100%).
+
+A price cannot be negative.
+
+</div>
 
 ---
 layout: image-right
 image: ../assets/drums.jpg
 ---
+
+<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
+
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## Value object
 
@@ -111,6 +148,7 @@ image: ../assets/drums.jpg
 <h3 v-click>defined by its value</h3>
 <h3 v-click>immutable</h3>
 <h3 v-click>no lifecycle</h3>
+</div>
 
 <!--
 Un Value Object est un objet défini par sa valeur. Deux VO avec la même valeur sont égaux.
@@ -127,18 +165,24 @@ TIMING: 1h
 layout: center
 class: text-center
 ---
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 3. The proposal
 
 <br>
 <br>
 <br>
-```
-- A proposal has a proposed price.
-- A proposal is placed by a musician.
-- A placed proposal is waiting for a decision.
-- A proposal can be accepted or rejected (if in waiting state).
-```
+<div class="relative z-10">
+
+A proposal has a proposed price.
+
+A proposal is placed by a musician.
+
+A placed proposal is waiting for a decision.
+
+A proposal can be accepted or rejected (if in waiting state).
+
+</div>
 
 <!--
 
@@ -150,6 +194,12 @@ Poser la question: proposal est-il une entité ou un VO?
 layout: image-right
 image: ../assets/guitar.jpg
 ---
+<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
+
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## The Aggregate
 
@@ -161,7 +211,7 @@ image: ../assets/guitar.jpg
 <h3 v-click>root is responsible for its invariants</h3>
 <h3 v-click>garantees consistency</h3>
 <h3 v-click>defines transactional boundaries</h3>
-
+</div>
 
 <!--
 Un aggregate est un ensemble de VO et/ou d'entités qui forment une unité cohérente.
@@ -177,58 +227,4 @@ Plus besoin de code défensif pour vérifier les invariants, c'est l'aggregate q
 Plus facile à tester, plus facile à maintenir.
 
 TIMING: 1h30 min
--->
-
----
-layout: center
-class: text-center
----
-
-## 4. Premium user
-
-<br>
-<br>
-<br>
-
-```
-A musician can become a premium user by paying a subscription.
-A premium user can publish more ads than a free user.
-A basic user can publish up to 3 ads.
-```
-
-<!--
-
-Question: cette règle métier peut-elle être implémentée dans un aggregat existant? Lequel?
-Qu'est-ce que ça implique?
-
--->
-
----
-layout: image-left
-image: ../assets/mixer.jpg
----
-
-## The Domain Service
-
-<br>
-<br>
-<br>
-
-<h3 v-click>domain logic across aggregates</h3>
-<h3 v-click>no infrastructure</h3>
-<h3 v-click>pure function</h3>
-
-<!--
-Un domain service est un service qui encapsule une logique métier qui ne peut pas être rattachée à une entité ou un VO.
-
-Il opère souvent sur plusieurs agrégats.
-
-Ses méthodes sont des fonctions pures (même signature, même résultat).
-
-Il ne doit pas contenir de logique d'infrastructure (accès aux données, envoi de mails, etc...).
-
-En celà il se distingue d'un application service (ou service d'application) qui lui contient de la logique d'infrastructure 
-et qui va orchestrer les appels aux domain services, aux repositories, etc...
-
-TIMING: 1h40 min
 -->

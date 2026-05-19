@@ -2,6 +2,7 @@
 layout: center
 class: text-center
 ---
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## Wrap-up
 
@@ -10,6 +11,11 @@ class: text-center
 layout: image-left
 image: ../assets/guitar.jpg
 ---
+<div class="absolute inset-y-0 right-0 w-1/2" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover; background-position: right;"></div>
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## Domain Driven Design
 
@@ -20,6 +26,7 @@ image: ../assets/guitar.jpg
 <h3 v-click>Not a framework...</h3>
 <h3 v-click>more like a toolbox</h3>
 <h3 v-click>not only code</h3>
+</div>
 
 <!--
 
@@ -39,31 +46,15 @@ L'importance des patterns stratégiques pour bien comprendre le domaine avant de
 On a rendu explicite tout ce qui était implicite dans nos têtes.
 -->
 
-
----
-layout: image-right
-image: ../assets/bass.jpg
----
-
-## Warnings
-
-<br>
-<br>
-<br>
-
-<h3 v-click>Not a silver bullet</h3>
-<h3 v-click>sometimes CRUD is more relevant</h3>
-<h3 v-click>easy to understand hard to master</h3>
-<h3 v-click>iterative</h3>
-<h3 v-click>be careful of the "by the book"</h3>
-
-<!--
-
--->
 ---
 layout: image-left
 image: ../assets/drums.jpg
 ---
+<div class="absolute inset-y-0 right-0 w-1/2" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover; background-position: right;"></div>
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## What about legacy code?
 
@@ -75,6 +66,7 @@ image: ../assets/drums.jpg
 <h3 v-click>move invariants</h3>
 <h3 v-click>identify and isolate bounded contexts</h3>
 
+</div>
 <!--
 Comment migrer un legacy vers du DDD ?
 
@@ -87,16 +79,3 @@ On n'est pas obligé d'utiliser tous les patterns DDD.
 - Isoler les Bounded Contexts
 - strangler pattern
 -->
-
----
-layout: center
-class: text-center
----
-
-## Last words
-
-<br>
-<br>
-<br>
-
-<div v-click><i>Take care of your model if you don't want to eat your cat's sh*t</i></div>

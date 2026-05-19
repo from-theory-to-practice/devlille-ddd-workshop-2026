@@ -1,21 +1,29 @@
 ---
-layout: center
-class: text-center
+layout: image
+image: ../assets/backgrounds/background_2.svg
+backgroundSize: contain
 ---
 
-![backStage.png](../assets/backStage.png)
+<div class="flex justify-center items-center h-full">
+  <img src="../assets/backstage_no_background.png" />
+</div>
 
 <!--
-
 Comme on a déjà un super nom, on a fait 90% du travail.
 Ce qu'on vous propose aujourd'hui, c'est de faire les 10% restants ensemble, en utilisant les méthodologies du Domain-Driven Design.
-
 -->
 
 ---
 layout: image-right
 image: ../assets/mixer.jpg
----
+--- 
+
+<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
+
+<div class="relative z-10">
+
+<br>
+<br>
 
 ## Business concepts ?
 
@@ -40,6 +48,8 @@ image: ../assets/mixer.jpg
 
 ### <v-click>pay</v-click>
 
+</div>
+
 <!--
 Quels sont les concepts métiers importants que l'on retient ?
 
@@ -57,7 +67,10 @@ class: text-center
 layout: center
 ---
 
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
+
 ## UBIQUITOUS LANGUAGE
+
 
 <!--
 Ce qu'on vient de faire, c'est commencer à construire un langage commun entre nous, développeurs, et les experts métiers.
@@ -65,39 +78,7 @@ Ce qu'on vient de faire, c'est commencer à construire un langage commun entre n
 Le language ubiquitaire.
 
 -->
-
---- 
-layout: image
-image: ../assets/projet-informatique.jpg
-backgroundSize: contain
----
-
-<!--
-
-Ce qu'on veut, c'est lever toutes les ambiguités sur le vocabulaire métier.
-Avoir des termes précis, partagés, et compris par tous.
-
-Le piège c'est d'avoir des termes qui veulent dire plusieurs choses, selon les personnes à qui on parle.
-
-Et en tant que développeur, on a une grosse responsabilité sur ce vocabulaire, 
-car on a tendance à introduire des termes techniques (biais du dev) qui n'ont pas de sens pour les experts métiers.
-
--->
-
----
-layout: center
-class: text-center
----
-
-![images](../assets/sangliers.jpg)
-
-<!--
-
-C'est parfois subtil, car on peut avoir une application qui fonctionne, 
-mais qui n'est pas bien alignée avec le métier.
-Et c'est sur la durée que ça pose problème. Lors d'évolutions, on s'aperçoit qu'on ne comprends plus.
-
--->
+    
 
 --- 
 class: text-center
@@ -110,61 +91,26 @@ layout: center
 
 On veut construire un model mental partagé avec tout le monde et dans le code.
 
-Mais qu'est-ce qu'un modèle ?
+TODO retravailler transition avec contexte
+
+Ce qu'on veut, c'est lever toutes les ambiguités sur le vocabulaire métier.
+Avoir des termes précis, partagés, et compris par tous.
+
+Le piège c'est d'avoir des termes qui veulent dire plusieurs choses, selon les personnes à qui on parle.
+
+Et en tant que développeur, on a une grosse responsabilité sur ce vocabulaire, 
+car on a tendance à introduire des termes techniques (biais du dev) qui n'ont pas de sens pour les experts métiers.
+
 
 -->
 
-
----
-layout: image
-image: ../assets/paris.jpg
-backgroundSize: contain
----
-
----
-layout: image
-image: ../assets/paris-map.jpg
-backgroundSize: contain
----
-
----
-layout: image
-image: ../assets/paris-metro.png
-backgroundSize: contain
----
-
----
-layout: quote
----
-
-# "All the models are wrong, but some are useful"
-
-George E. P. Box
-
-<!--
-
-Ce qu'on veut, c'est un model simple, utile dans un contexte donné. 
-
-Et le contexte, c'est très important !
-
--->
-
----
-class: text-center
-layout: center
----
-
-![bounded-context.jpg](../assets/bounded-context.jpg)
-
-<!--
-
--->
 
 
 ---
 class: text-center
 layout: center
 ---
+<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## Bounded Context
 
@@ -180,65 +126,12 @@ Tout l'enjeu va être de bien définir ces frontières.
 Et pour ça on va s'appuyer sur les...
 -->
 
-
 ---
 class: text-center
 layout: center
 ---
 
-## Sub-domains
-
-<!--
-Les sous-domaines vont nous aider à structurer notre domaine métier.
-
-Un sous-domaine est une partie du domaine métier qui a une responsabilité spécifique. 
-Un ensemble de capacités métier cohérentes. 
-
-Quels sont les sous-domaines dans notre application ?
-
-Studio
-Vente d'instruments: Marketplace
-Gestion des comptes utilisateurs
-Gestion des notifications
-Alerting
-Payments
--->
-
----
-class: text-center
-layout: image-left
-image: ../assets/guitar.jpg
----
-
-## Sub-domains typologies
-
-<br><br>
-<h3 v-click>Core Domain</h3>
-<h3 v-click>Supporting Subdomain</h3>
-<h3 v-click>Generic Subdomain</h3>
-
-<!--
-On peut découper le domaine métier en sous-domaines.
-[click] Le Core Domain est le sous-domaine principal, celui qui apporte de la valeur différenciante à l'entreprise.
-
-[click] Le Supporting Subdomain est un sous-domaine qui apporte de la valeur, mais qui n'est
-pas différenciante. (ex: un catalogue de produits)
-
-[click] Le Generic Subdomain est un sous-domaine qui n'apporte pas de valeur différenciante, et qui peut être externalisé. (ex: gestion des notifications, gestion des paiements, etc...)
-
--->
-
----
-layout: image
-image: ../assets/core-domain-chart.jpg
-backgroundSize: 65% 90%
----
-<div v-click style="position: fixed;right:300px;top:100px">MARKETPLACE</div>
-<div v-click style="position: fixed;right:300px;bottom:100px">STUDIO</div>
-<div v-click style="position: fixed;left:420px;top:200px">ALERTING</div>
-<div v-click style="position: fixed;left:315px;top:120px">PAYMENT</div>
-
-<div class="source">source: https://ddd-crew.github.io/ddd-starter-modelling-process/</div>
+<img src="../assets/bounded-context-en.png" alt="bounded-context" class="max-h-full max-w-full object-contain" style="max-height: 52vh;" />
 
 <!--
 Ici quel est notre core-domain?
@@ -249,55 +142,18 @@ Grace à ce découpage, on va pouvoir aligner les bounded contexts.
 L'alignement entre les sous-domaines et les bounded contextes n'est pas forcément 1:1, mais c'est souvent le cas.
 
 C'est un choix d'architecture important à faire en amont du projet.
+
+On peut découper le domaine métier en sous-domaines.
+[click] Le Core Domain est le sous-domaine principal, celui qui apporte de la valeur différenciante à l'entreprise.
+
+[click] Le Supporting Subdomain est un sous-domaine qui apporte de la valeur, mais qui n'est
+pas différenciante. (ex: un catalogue de produits)
+
+[click] Le Generic Subdomain est un sous-domaine qui n'apporte pas de valeur différenciante, et qui peut être externalisé. (ex: gestion des notifications, gestion des paiements, etc...)
+
+TODO attention au dernier clic
 -->
 
 
----
-layout: image-right
-image: ../assets/mic.jpg
----
 
 
-## Strategic patterns
-
-<!--
-
-Tout ce dont on a parlé jusqu'à présent (ubiquitous language, bounded-contexts, sub-domains), ça fait partie des patterns stratégiques.
-
-C'est un des pans, si ce n'est le pan le plus important du DDD.
-
-Il y a plein de chose à creuser là-dedans, ici on a pris des raccourcis, on a été très vite. 
-Dans la réalité, on va passer beaucoup plus de temps pour comprendre et essayer de modéliser.
-
-Pour ça, on a pas mal de choses dans la toolbox DDD, et on peut notamment utiliser des ateliers collaboratifs comme l'Event Storming.
--->
-
----
-layout: image
-image: ../assets/event-storming.png
-backgroundSize: contain
----
-
-
----
-layout: image-left
-image: ../assets/amp.jpg
----
-
-## Tactical patterns
-<br>
-<br>
-<h3 v-click>Entities</h3>
-<h3 v-click>Value objects</h3>
-<h3 v-click>Aggregates</h3>
-<h3 v-click>Domain service</h3>
-<h3 v-click>Domain events</h3>
-
-<!--
-
-Mais on a choisi aujourd'hui de se concentrer beaucoup plus longuement sur les patterns tactiques.
-Car c'est souvent le point d'entrée des développeurs dans le DDD, et la conference est orientée code.
-
-Maintenant il est important de comprendre que le DDD ne se limite pas aux patterns tactiques, et qu'au contraire
-le DDD commence par les patterns stratégiques (pas de tactique sans stratégie).
--->

@@ -3,12 +3,12 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: ./assets/backgrounds/title.svg
 # some information about your slides (markdown enabled)
-title: Tech days 2025 - DDD Workshop 
+title: Tech days 2025 - DDD Workshop
 info: |
   ## Slides from the DDD Workshop
-  
+
 # apply UnoCSS classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -21,24 +21,65 @@ mdc: true
 
 ---
 
-# DDD Hands-on
 
-Decathlon Tech days 2025
-
-<div>
-<a href="https://urls.fr/4dzer_">https://urls.fr/4dzer_</a>
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-
-</div>
+<div class="talk-card">
+  <div class="talk-card__title-wrapper">
+    <div class="talk-card__title-line">
+      <span class="talk-card__title-highlight">DDD</span>
+    </div>
+    <div class="talk-card__title-word">HANDS-ON</div>
+  </div>
+  <div class="talk-card__subtitle">From theory to practice</div>
+</div>  
 
 
  <style>
-  h2 {
+
+.talk-card__title-wrapper {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.talk-card__title-line {
+  margin-bottom: 0.15em;
+}
+
+.talk-card__title-highlight {
+  background: #9b6ee0;
+  color: #fff;
+  padding: 0.12em 0.3em;
+  display: inline-block;
+  font-size: clamp(48px, 8vw, 88px);
+  text-transform: uppercase;
+}
+
+.talk-card__title-word {
+  color: #fff;
+  font-size: clamp(48px, 8vw, 88px);
+  text-transform: uppercase;
+}
+
+.talk-card__subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(18px, 2.5vw, 30px);
+  color: #c0c8d8;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+ h2 {
+    font-family: 'Montserrat', sans-serif;
     display: inline-block;
     background-color: #222; 
     color: white;
@@ -58,13 +99,18 @@ Decathlon Tech days 2025
         0% 21%   /* Point milieu-gauche (haut) */
     );
   }
-  .source {
-    position: fixed;
-    bottom: 0rem;
-    right: 1rem;
-    font-size: 0.8rem;
-    color: black;
-    opacity: 0.6;
+ h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+ h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
+ p {
+    font-family: 'Montserrat', sans-serif;
+  }
+ span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
   }
   </style>
 
@@ -93,17 +139,7 @@ hide: false
 ---
 
 ---
-layout: center
-class: text-center
+layout: image
+image: ../assets/backgrounds/thankyou.svg
 ---
 
-## Thank you
-
-[Resources](https://github.com/francoisblarel/techday-ddd-workshop/blob/main/RESOURCES.md) · [GitHub](https://github.com/francoisblarel/techday-ddd-workshop)
-· [Channel Slack DDD](https://decathlondigital.slack.com/archives/C091F769QP2)
-
-<br><br>
-<div>Bastien Terrier / François Blarel</div>
-
-
-<div class="source">image bank: https://pixabay.com/</div>
