@@ -5,7 +5,7 @@ theme: default
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: ./assets/backgrounds/title.svg
 # some information about your slides (markdown enabled)
-title: Tech days 2025 - DDD Workshop
+title: Adeo dev summit - DDD Workshop
 info: |
   ## Slides from the DDD Workshop
 

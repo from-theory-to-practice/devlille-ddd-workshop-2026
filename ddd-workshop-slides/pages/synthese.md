@@ -24,13 +24,19 @@ image: ../assets/guitar.jpg
 <br>
 
 <h3 v-click>Not a framework...</h3>
-<h3 v-click>more like a toolbox</h3>
-<h3 v-click>not only code</h3>
+<h3 v-click>More like a toolbox</h3>
+<h3 v-click>Not only code</h3>
+<h3 v-click>Iterative</h3>
 </div>
 
 <!--
 
-
+- éviter le modèle anémique
+- éviter les god objects (grâce aux BCs)
+- Ubiquitous language évite les pertes d'info ou malentendus
+- pas un silver bullet (parfois CRUD est plus pertinent)
+- culture à mettre en place entre les dev et les experts métier
+- la compréhension du métier évolue
 -->
 
 ---
@@ -56,18 +62,25 @@ image: ../assets/drums.jpg
 <br>
 <br>
 
-## What about legacy code?
+## Takeaways 
 
 <br>
 <br>
 <br>
 
-<h3 v-click>use value object</h3>
-<h3 v-click>move invariants</h3>
-<h3 v-click>identify and isolate bounded contexts</h3>
+<h3 v-click>Explicit the knowledge</h3>
+<h3 v-click>Focus on core domain</h3>
+<h3 v-click>Start with simple patterns (value object)</h3>
+<h3 v-click>Move invariants</h3>
 
 </div>
 <!--
+
+- expliciter les connaissances métier de l'équipe
+- Bien identifier les Bounded Contexts
+- Isoler les Bounded Contexts
+- strangler pattern
+- 
 Comment migrer un legacy vers du DDD ?
 
 On n'est pas obligé d'utiliser tous les patterns DDD.
@@ -75,7 +88,4 @@ On n'est pas obligé d'utiliser tous les patterns DDD.
 
 - Est-ce possible de déplacer les invariants métier dans les entités?
 
-- Bien identifier les Bounded Contexts
-- Isoler les Bounded Contexts
-- strangler pattern
 -->

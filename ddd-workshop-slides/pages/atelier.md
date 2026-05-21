@@ -40,6 +40,9 @@ class: text-center
 <!--
 présentation rapide de l'architecture proposée
 
+- présentation des BCs (layered vs hexagonal architecture)
+- Ubiquitous langage: instrument a une forme differente dans les 2 BCs
+
 TIMING: 20 min
 -->
 
@@ -95,8 +98,8 @@ image: ../assets/bass.jpg
 Une entité est un objet qui a une identité propre et un cycle de vie.
 
 Elle est mutable, on peut modifier ses propriétés au cours de son cycle de vie.
-Par contre, ce n'est pas une entité Hibernate. 
-Ici la notion d'encapsulation est importante. On n'expose pas les propriétés, mais des méthodes métier.
+Par contre, ce n'est pas une entité Hibernate (attributs vs comportement)
+Ici la notion d'encapsulation est importante. On n'expose pas les propriétés, mais des comportements.
 On veut exprimer l'intention métier.
 
 Elle porte ses invariants métier. C'est elle qui garantit la cohérence de son état.
