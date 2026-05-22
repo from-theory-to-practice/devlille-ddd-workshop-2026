@@ -129,12 +129,12 @@ hide: false
 ---
 
 ---
-src: ./pages/atelier.md
+src: ./pages/workshop.md
 hide: false
 ---
 
 ---
-src: ./pages/synthese.md
+src: ./pages/synthesis.md
 hide: false
 ---
 
@@ -161,3 +161,7 @@ class: text-center
 
 </div>
 
+<!--
+@Thomas - 1h28min
+
+-->

@@ -9,6 +9,8 @@ backgroundSize: contain
 </div>
 
 <!--
+@François - 0min
+
 Comme on a déjà un super nom, on a fait 90% du travail.
 Ce qu'on vous propose aujourd'hui, c'est de faire les 10% restants ensemble, en utilisant les méthodologies du Domain-Driven Design.
 -->
@@ -51,6 +53,8 @@ image: ../assets/mixer.jpg
 </div>
 
 <!--
+@François - 2min
+
 Quels sont les concepts métiers importants que l'on retient ?
 
 Musicien
@@ -73,6 +77,8 @@ layout: center
 
 
 <!--
+@Thomas - 4min
+
 Ce qu'on vient de faire, c'est commencer à construire un langage commun entre nous, développeurs, et les experts métiers.
 
 Le language ubiquitaire.
@@ -88,6 +94,7 @@ layout: center
 ![ubiquitous-language.png](../assets/ubiquitous-language.png)
 
 <!--
+@Thomas - 4min
 
 On veut construire un model mental partagé avec tout le monde et dans le code.
 
@@ -115,6 +122,7 @@ layout: center
 ## Bounded Context
 
 <!--
+@Bastien - 6min
 
 Ca tombe bien, pour ça DDD nous donne la notion de bounded Context.
 
@@ -134,6 +142,8 @@ layout: center
 <img src="../assets/bounded-context-en.png" alt="bounded-context" class="max-h-full max-w-full object-contain" style="max-height: 52vh;" />
 
 <!--
+@Bastien - 7min
+
 Ici quel est notre core-domain?
 Quels sont les supporting subdomains?
 Quels sont les generic subdomains?
@@ -153,7 +163,3 @@ pas différenciante. (ex: un catalogue de produits)
 
 TODO attention au dernier clic
 -->
-
-
-
-

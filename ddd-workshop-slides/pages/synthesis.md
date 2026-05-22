@@ -6,6 +6,10 @@ class: text-center
 
 ## Wrap-up
 
+<!--
+@François - 1h18min
+
+-->
 
 ---
 layout: image-left
@@ -30,6 +34,7 @@ image: ../assets/guitar.jpg
 </div>
 
 <!--
+@François - 1h18min
 
 - éviter le modèle anémique
 - éviter les god objects (grâce aux BCs)
@@ -46,6 +51,8 @@ backgroundSize: contain
 ---
 
 <!--
+@François - 1h22min
+
 Tout était déjà là.
 L'importance des patterns stratégiques pour bien comprendre le domaine avant de se lancer dans la solution.
 
@@ -75,12 +82,13 @@ image: ../assets/drums.jpg
 
 </div>
 <!--
+@François - 1h23min
 
 - expliciter les connaissances métier de l'équipe
 - Bien identifier les Bounded Contexts
 - Isoler les Bounded Contexts
 - strangler pattern
-- 
+
 Comment migrer un legacy vers du DDD ?
 
 On n'est pas obligé d'utiliser tous les patterns DDD.
