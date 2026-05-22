@@ -52,7 +52,7 @@ class: text-center
 <br>
 <br>
 
-<div class="relative z-10">
+<div class="relative z-10 text-2xl">
 
 A musician can publish an Ad to sell an instrument.
 
@@ -120,7 +120,7 @@ class: text-center
 <br>
 <br>
 
-<div class="relative z-10">
+<div class="relative z-10 text-2xl">
 
 A musician can apply a discount on the price of his ad.
 
@@ -182,7 +182,7 @@ class: text-center
 <br>
 <br>
 <br>
-<div class="relative z-10">
+<div class="relative z-10 text-2xl">
 
 A proposal has a proposed price.
 
