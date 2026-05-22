@@ -84,8 +84,8 @@ image: ../assets/drums.jpg
 Comment migrer un legacy vers du DDD ?
 
 On n'est pas obligé d'utiliser tous les patterns DDD.
-- Commencer par les plus simples: les value objects.
+- Commencer par les plus simples: les value objects. (⬆️ testabilité, ⬇️ code, ⬇️ complexité accidentelle)
 
-- Est-ce possible de déplacer les invariants métier dans les entités?
+- Est-ce possible de déplacer les invariants métier dans les entités? (⬆️ cohérence, ⬇️  code défensif)
 
 -->
