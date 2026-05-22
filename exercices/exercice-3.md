@@ -10,12 +10,16 @@ Introduce a new entity `Proposal` based on the following requirements:
 - A placed proposal is waiting for a decision.
 - A proposal can be accepted or rejected (if in waiting state).
 ```
+<details>
+  <summary>Procedure (click here)</summary>
 
 - Create an `Proposal` class with the following properties:
   - `musicianId`: MusicianId
   - `desiredPrice`: Price
   - `status`: WAITING | ACCEPTED | REJECTED (enum)
 - Add methods in the `Proposal` class to `accept` and `reject` the proposal, changing its status accordingly.
+
+</details>
 
 ### Ad as an aggregate root
 
@@ -27,9 +31,15 @@ The `Ad` and `Proposal` entities are related with the following rules:
 - If a musician tries to make more than one proposal for the same Ad, the last proposal should replace the previous one.
 ```
 
+<details>
+  <summary>Procedure (click here)</summary>
+
 Add a `makeProposal(MusicianId, Price)` method to the `Ad` class to handle the creation and management of proposals.
 Add the `acceptProposal(MusicianId)` and `rejectProposal(MusicianId)` methods to the `Ad` class to handle the
 acceptance/rejection of a proposal
+
+</details>
+
 
 The `Ad` entity should be responsible for managing its proposals, ensuring that the business rules are enforced.
 
