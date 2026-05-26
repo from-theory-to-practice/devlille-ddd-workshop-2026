@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Ad {
 
-  private final UUID id;
+  private final AdId id;
   private final MusicianId musicianId;
   private final String instrument;
   private final BigDecimal price;
@@ -17,7 +17,7 @@ public class Ad {
   private AdStatus status;
 
   private Ad(MusicianId musicianId, String instrument, BigDecimal price, Currency currency) {
-    this.id = UUID.randomUUID();
+    this.id = new AdId(UUID.randomUUID());
     this.musicianId = musicianId;
     this.instrument = instrument;
     this.price = price;
@@ -28,7 +28,7 @@ public class Ad {
   public static Ad publish(MusicianId musicianId, String instrument, BigDecimal price, Currency currency)
     throws InvalidAdException {
 
-    if(instrument.isBlank()) {
+    if (instrument.isBlank()) {
       throw new InvalidAdException("Instrument cannot be blank");
     }
 
@@ -43,7 +43,7 @@ public class Ad {
     this.status = AdStatus.SOLD_OUT;
   }
 
-  public UUID getId() {
+  public AdId getId() {
     return id;
   }
 
