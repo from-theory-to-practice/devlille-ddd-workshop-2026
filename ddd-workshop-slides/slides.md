@@ -142,22 +142,50 @@ image: ../assets/backgrounds/thankyou.svg
 class: text-center
 ---
 
-<div class="absolute inset-0 flex flex-col items-center gap-10 z-10" style="padding-top: 13%;">
-
+<div class="absolute inset-0 flex flex-col items-center z-10" style="padding-top: 13%;">
 <p style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; text-transform: uppercase; letter-spacing: 3px; color: #fff; margin: 0;">To go further</p>
-
-<div class="flex gap-24 justify-center items-start mt-6">
-  <div class="flex flex-col items-center gap-4">
-    <h3>Resources</h3>
-    <img src="./assets/resources_qr_code.svg" class="w-44 h-44" />
-  </div>
-  <div class="flex flex-col items-center gap-4">
-    <h3>Quiz</h3>
-    <img src="./assets/quiz_qr_code.svg" class="w-44 h-44" />
-  </div>
+<div class="flex w-full justify-around items-start mt-8 px-4">
+<div class="flex flex-row gap-8 items-start">
+<div class="flex flex-col items-center gap-2">
+<span class="speaker-tag">Resources 📜</span>
+<img src="./assets/resources_qr_code.svg" class="w-36 h-36" alt="resources QR code" />
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="speaker-tag">Quiz ❓</span>
+<img src="./assets/quiz_qr_code.svg" class="w-36 h-36" alt="quiz QR code" />
+</div>
+</div>
+<div class="flex flex-col gap-6 items-start">
+<div class="flex flex-row items-center gap-4">
+<img src="./assets/francois.jpg" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
+<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">François Blarel <img src="./assets/decathlon.png" alt="decathlon" style="height: 1.2rem; width: auto;" /></span>
+</div>
+<div class="flex flex-row items-center gap-4">
+<img src="./assets/bastien.jpg" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
+<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">Bastien Terrier <img src="./assets/decathlon.png" alt="decathlon" style="height: 1.2rem; width: auto;" /></span>
+</div>
+<div class="flex flex-row items-center gap-4">
+<img src="./assets/thomas.png" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
+<div class="flex flex-row items-center gap-2">
+<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">Thomas Smagghe <img src="./assets/adeo_services.png" alt="adeo" style="height: 1.2rem; width: auto;" /></span>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-</div>
+<style>
+.speaker-tag {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #222;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  clip-path: polygon(2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%);
+}
+</style>
 
 <!--
 @Thomas - 1h28min

@@ -4,8 +4,35 @@ image: ../assets/backgrounds/background_2.svg
 backgroundSize: contain
 ---
 
-<div class="flex justify-center items-center h-full">
-  <img src="../assets/backstage_no_background.png" />
+<style>
+.speaker-tag {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #222;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  clip-path: polygon(2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%);
+}
+</style>
+
+<div class="flex flex-col justify-center items-center h-full gap-16">
+  <img src="../assets/backstage_no_background.png" class="max-h-46 object-contain" />
+  <div class="flex gap-24 items-center">
+    <div class="flex flex-col items-center gap-2">
+      <img src="../assets/francois.jpg" class="w-28 h-28 rounded-full object-cover" />
+      <span class="speaker-tag">François 🎸</span>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <img src="../assets/bastien.jpg" class="w-28 h-28 rounded-full object-cover" />
+      <span class="speaker-tag">Bastien 🎸 🥁</span>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <img src="../assets/thomas.png" class="w-28 h-28 rounded-full object-cover" />
+      <span class="speaker-tag">Thomas 🎸🎤</span>
+    </div>
+  </div>
 </div>
 
 <!--
