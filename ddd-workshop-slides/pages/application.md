@@ -11,8 +11,17 @@ backgroundSize: contain
 <!--
 @François - 0min
 
-Comme on a déjà un super nom, on a fait 90% du travail.
-Ce qu'on vous propose aujourd'hui, c'est de faire les 10% restants ensemble, en utilisant les méthodologies du Domain-Driven Design.
+An app for musicians. An app that would allow to showcase your studio, with your instruments, your sound presets, your amp configuration.
+
+We thought that would be a great idea. 
+But then we thought we could go further, and maybe add a marketplace around the studios.
+Allowing musicians to publish ads to sell instruments. With a nice system to negotiate the prices (applying discount or making price proposal).
+Maybe place an alert to be notified when your dream instrument is on sale.
+And of course a secure payment system to finalize the deal.
+
+Ok that's sounds like a great idea, with a great name, great features. And today we have great people to implement it for us.
+
+So why don't we use the DDD methodology to do it?
 -->
 
 ---
@@ -42,29 +51,21 @@ image: ../assets/mixer.jpg
 
 ### <v-click> Ad</v-click>
 
-### <v-click> to apply a discount</v-click>
+### <v-click> Apply a discount</v-click>
 
-### <v-click> make a price proposition</v-click>
+### <v-click> Make a price proposal</v-click>
 
-### <v-click> place an alert</v-click>
+### <v-click> Place an alert</v-click>
 
-### <v-click>pay</v-click>
+### <v-click> Pay</v-click>
 
 </div>
 
 <!--
 @François - 2min
 
-Quels sont les concepts métiers importants que l'on retient ?
+First thing first, what are the business concepts that we talked about?
 
-Musicien
-Studio
-Instrument
-Annonce
-Prix
-Faire une Proposition de prix
-Alerte
-appliquer un discount
 -->
 --- 
 class: text-center

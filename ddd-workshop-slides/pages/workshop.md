@@ -11,8 +11,10 @@ class: text-center
 <!--
 @François - 8min
 
-On a fait la partie stratégique, on va rentrer dans la partie tactique. Et plutôt que de présenter tous les concepts un par un, 
-on va partir d'une approche naïve afin de les faire émerger au fur et à mesure.
+We did a quick introduction to one of the pillar of DDD, the strategic part. 
+But today we want to code, and for this we have the tactical part, with many technical concepts.
+
+As we don't want to enumerate them, we are going to take a naive approach in order to showcase some patterns.
 -->
 
 ---
@@ -28,16 +30,12 @@ class: text-center
 <!--
 @François - 8min
 
-#### Scope and limitations
+So fo this, we are going to take some simple use cases to go to the point.
+We have a limited time, so we are going to intentionally leave some aspects aside. Notably the infrastructure part.
 
-On va partir de certains use cases simples de l'application afin de mettre en lumière les différents patterns.
-
-On a un temps limité, on va donc sciemment laisser certains aspects de côté. Notamment la partie infrastructure.
-
-présentation rapide de l'architecture proposée
-
-- présentation des BCs (layered vs hexagonal architecture)
-- Ubiquitous langage: instrument a une forme differente dans les 2 BCs
+Show the code architecture :
+- layered vs hexagonal architecture
+- Ubiquitous langage: instrument has a different form on the two BCs.
 -->
 
 ---
@@ -97,14 +95,14 @@ image: ../assets/bass.jpg
 <!--
 @François - 20min
 
-Une entité est un objet qui a une identité propre et un cycle de vie.
+An entity is an object with an identity and a lifecycle.
+It is mutable, with a state that can evolve over time.
 
-Elle est mutable, on peut modifier ses propriétés au cours de son cycle de vie.
-Par contre, ce n'est pas une entité Hibernate (attributs vs comportement)
-Ici la notion d'encapsulation est importante. On n'expose pas les propriétés, mais des comportements.
-On veut exprimer l'intention métier.
+This is not a Hibernate entity, we are not talking about persistence here. This is not a data container. 
+We are talking about a domain entity, with behavior and invariants that express the business intention.
 
-Elle porte ses invariants métier. C'est elle qui garantit la cohérence de son état.
+The invariants part is very important, as it guarantees the cohesion of the state.
+There are no setters, the only way to alter the state of the entity, is by using its behavior methods.
 -->
 
 

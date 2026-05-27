@@ -115,12 +115,10 @@ mdc: true
   </style>
 
 <!--
-On a pensé à une application révolutionnaire pour les musiciens : 
-Une plateforme ou chaque musicien peut exposer son studio avec tous ses instruments. Montrer ses réglages, 
-ses configurations, ses effets, ses amplis, etc.
+Are there any musicians in the room?
 
-Mais ce n'est pas tout, il y a aussi une partie marketplace qui permet aux musiciens de vendre leurs instruments d'occasion entre eux via des annonces.
-Et cette appli, on l'a appelé...
+We love music and instruments, and today we are going to talk about an app we thought about: backstage
+
 -->
 
 ---

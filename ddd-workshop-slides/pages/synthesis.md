@@ -9,6 +9,9 @@ class: text-center
 <!--
 @François - 1h18min
 
+Ok, we only scratched the surface, we didn't even talk about domain services, repositories or events.
+But that would be for another workshop (maybe season 2)
+
 -->
 
 ---
@@ -36,12 +39,15 @@ image: ../assets/guitar.jpg
 <!--
 @François - 1h18min
 
-- éviter le modèle anémique
-- éviter les god objects (grâce aux BCs)
-- Ubiquitous language évite les pertes d'info ou malentendus
-- pas un silver bullet (parfois CRUD est plus pertinent)
-- culture à mettre en place entre les dev et les experts métier
-- la compréhension du métier évolue
+DDD is not a framework, but more like a toolbox, with patterns at different levels of abstraction,
+not only in code but also in the way we work together, as a culture.
+
+This is not a silver bullet (CRUD can be more relevant)
+
+Iterative, as it models the business understanding, and business evolves, and understanding evolve.
+So we have to discuss with business experts, and build our model with them.
+And a model is not only in the code...
+
 -->
 
 ---
@@ -53,10 +59,8 @@ backgroundSize: contain
 <!--
 @François - 1h22min
 
-Tout était déjà là.
-L'importance des patterns stratégiques pour bien comprendre le domaine avant de se lancer dans la solution.
-
-On a rendu explicite tout ce qui était implicite dans nos têtes.
+Everything was here, for exemple in an event storming workshop.
+This is where the strategic patterns shine. To make the domain explicit, and model it together.
 -->
 
 ---
@@ -77,23 +81,21 @@ image: ../assets/drums.jpg
 
 <h3 v-click>Explicit the knowledge</h3>
 <h3 v-click>Focus on core domain</h3>
-<h3 v-click>Start with simple patterns (value object)</h3>
+<h3 v-click>Start with simple patterns</h3>
 <h3 v-click>Move invariants</h3>
 
 </div>
 <!--
 @François - 1h23min
 
-- expliciter les connaissances métier de l'équipe
-- Bien identifier les Bounded Contexts
-- Isoler les Bounded Contexts
-- strangler pattern
+So what can you take away from this workshop?
 
-Comment migrer un legacy vers du DDD ?
-
-On n'est pas obligé d'utiliser tous les patterns DDD.
-- Commencer par les plus simples: les value objects. (⬆️ testabilité, ⬇️ code, ⬇️ complexité accidentelle)
-
-- Est-ce possible de déplacer les invariants métier dans les entités? (⬆️ cohérence, ⬇️  code défensif)
+- Explicit the knowledge, and make it explicit for everyone with ubiquitous langage. "Make the implicit explicit".
+- Identify your bounded contexts. Focus on the core domain, and don't be afraid to start with a small part of it.
+- Don't try to use all the patterns at once. You can start with value objects, and then move forward. 
+Value objects give you a better testability, with less code and less accidental complexity.
+- Move invariants. Using entities prevents from having anemic objects, 
+with a better consistency and less defensive code.
+- Keep in mind that DDD is a journey.
 
 -->
