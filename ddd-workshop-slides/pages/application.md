@@ -124,17 +124,19 @@ layout: center
 <!--
 @Thomas - 4min
 
-On veut construire un model mental partagé avec tout le monde et dans le code.
+What we've just done here is establish a common language between us, developers, and the business experts.
+We call this the ubiquitous language.
 
-TODO retravailler transition avec contexte
+We need to put explicit definitions to terms we use. When we're having a conversation, it can happen that we
+don't understand words the same way the person we're talking to understands.
+For instance, when we talk about a transaction, what do we mean by this ? A money transfer ? Goods ? Favors ?
 
-Ce qu'on veut, c'est lever toutes les ambiguités sur le vocabulaire métier.
-Avoir des termes précis, partagés, et compris par tous.
+It can also happen that the same meaning has different words ! (talk about adeo example)
 
-Le piège c'est d'avoir des termes qui veulent dire plusieurs choses, selon les personnes à qui on parle.
+As developers we can also introduce technical terms that don't mean much to non technical teams.
 
-Et en tant que développeur, on a une grosse responsabilité sur ce vocabulaire, 
-car on a tendance à introduire des termes techniques (biais du dev) qui n'ont pas de sens pour les experts métiers.
+So what we want is alignment about vocabulary : strict and explicit definitions of the terms we use.
+This alignment must be shared across all the people that interact with the domain.
 
 
 -->

@@ -161,11 +161,11 @@ image: ../assets/drums.jpg
 <!--
 @Thomas - 40min
 
-Un Value Object est un objet défini par sa valeur. Deux VO avec la même valeur sont égaux.
+A valu Object is an object defined by its value. Two VO with the same value are equal.
 
-Ils sont immuables. On ne peut pas modifier un VO, on crée un nouveau VO avec la nouvelle valeur.
+They are immutables. We can't modify a vo, we need to create another one with the new value.
 
-Ils n'ont pas de cycle de vie. Ils n'ont pas d'identité propre. Ils existent uniquement dans le contexte d'une autre entité.
+They don't have a lifecyle nor do they have their own identity. They only exist in the context of another entity.
 -->
 
 
