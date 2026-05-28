@@ -154,14 +154,17 @@ layout: center
 <!--
 @Bastien - 6min
 
-Ca tombe bien, pour ça DDD nous donne la notion de bounded Context.
+As Thomas mentioned, the same word can have different definitions and data models depending on the context.
 
-Un bounded contexte, c'est une frontière explicite dans laquelle un langage ubiquitaire 
-va s'appliquer, via un modèle spécifique.
+Let’s take a book as an example:
+- For the Publisher (Catalog/Sales Context): It is a commercial product. It is defined by an ISBN, title, author, price, genre, and publication date.
+- For the Carrier (Logistics Context): It is a physical package. The story inside doesn't matter. What matters is weight, dimensions, a tracking barcode, and a destination pallet.
+- For the Writer (Creation Context): It is a manuscript. It is defined by word count, chapters, characters, and a progress status (draft, edited, approved).
 
-Tout l'enjeu va être de bien définir ces frontières.
+This is why we define Bounded Contexts. A Bounded Context is an explicit boundary where a specific data model and Ubiquitous Language apply.
 
-Et pour ça on va s'appuyer sur les...
+➔ The goal: No more "God Objects"—that giant, bloated data model where we try to force everything to fit.
+
 -->
 
 ---
@@ -174,22 +177,8 @@ layout: center
 <!--
 @Bastien - 7min
 
-Ici quel est notre core-domain?
-Quels sont les supporting subdomains?
-Quels sont les generic subdomains?
+So, context matters!
 
-Grace à ce découpage, on va pouvoir aligner les bounded contexts.
-L'alignement entre les sous-domaines et les bounded contextes n'est pas forcément 1:1, mais c'est souvent le cas.
+Still not convinced?
 
-C'est un choix d'architecture important à faire en amont du projet.
-
-On peut découper le domaine métier en sous-domaines.
-[click] Le Core Domain est le sous-domaine principal, celui qui apporte de la valeur différenciante à l'entreprise.
-
-[click] Le Supporting Subdomain est un sous-domaine qui apporte de la valeur, mais qui n'est
-pas différenciante. (ex: un catalogue de produits)
-
-[click] Le Generic Subdomain est un sous-domaine qui n'apporte pas de valeur différenciante, et qui peut être externalisé. (ex: gestion des notifications, gestion des paiements, etc...)
-
-TODO attention au dernier clic
 -->

@@ -220,22 +220,29 @@ image: ../assets/guitar.jpg
 
 <h3 v-click>contains VO and/or entities</h3>
 <h3 v-click>root is responsible for its invariants</h3>
-<h3 v-click>garantees consistency</h3>
-<h3 v-click>defines transactional boundaries</h3>
+<h3 v-click>guarantees consistency</h3>
+<h3 v-click>defines transactional & structural boundaries</h3>
 </div>
 
 <!--
 @Bastien - 1h03min
 
-Un aggregate est un ensemble de VO et/ou d'entités qui forment une unité cohérente.
+An Aggregate is a cluster of Entities and Value Objects (VOs) that form a cohesive unit.
 
-La racine est responsable de ses invariants. C'est lui qui garantit la cohérence de l'ensemble.
+The Aggregate Root is responsible for its business rules (invariants). It guarantees the consistency of the entire group.
 
-Il définit les frontières transactionnelles et structurelles.
+It defines both transactional and structural boundaries.
 
-Il est le seul point d'entrée pour accéder aux VO et entités qu'il contient.
+- structural boundary: 
+  - It acts as the single entry point to access any internal Entity or VO.
+  - if you remove the Ad, the proposals are removed to. 
+  - You do not access the proposal directly: you need to ask the Ad.
+- transactional boundary:
+  - Immediate consistency: everything or nothing
+  - when you accept a musician proposal for a given ad, the ad price is updated and the Ad is sold, in the exact same time in your database.
+  - without aggregate: if the application crashes while accepting the proposal, the price would be updated; proposal accepted but Ad would still be available.
+ 
+No more defensive code scattered everywhere to check rules—the Aggregate handles it all.
 
-Plus besoin de code défensif pour vérifier les invariants, c'est l'aggregate qui s'en charge.
-
-Plus facile à tester, plus facile à maintenir.
+The result: Easier to test, easier to maintain.
 -->
