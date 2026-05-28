@@ -107,9 +107,7 @@ layout: center
 <!--
 @Thomas - 4min
 
-Ce qu'on vient de faire, c'est commencer à construire un langage commun entre nous, développeurs, et les experts métiers.
-
-Le language ubiquitaire.
+What we've just done here is establish a common language between us, developers, and the business experts. We call this the ubiquitous language.
 
 -->
     
@@ -124,8 +122,6 @@ layout: center
 <!--
 @Thomas - 4min
 
-What we've just done here is establish a common language between us, developers, and the business experts.
-We call this the ubiquitous language.
 
 We need to put explicit definitions to terms we use. When we're having a conversation, it can happen that we
 don't understand words the same way the person we're talking to understands.
