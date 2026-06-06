@@ -9,7 +9,7 @@ class: text-center
 
 
 <!--
-@François - 8min
+@François - 13min
 
 We did a quick introduction to one of the pillar of DDD, the strategic part. 
 But today we want to code, and for this we have the tactical part, with many technical concepts.
@@ -28,14 +28,14 @@ class: text-center
 ## Architecture
 
 <!--
-@François - 8min
+@François - 13min
 
 So fo this, we are going to take some simple use cases to go to the point.
 We have a limited time, so we are going to intentionally leave some aspects aside. Notably the infrastructure part.
 
 Show the code architecture :
 - layered vs hexagonal architecture
-- Ubiquitous langage: instrument has a different form on the two BCs.
+- Ubiquitous language: instrument has a different form on the two BCs.
 -->
 
 ---
@@ -62,7 +62,7 @@ An Ad is available to sell until it is sold.
 </div>
 
 <!--
-@François - 13min
+@François - 18min
 
 Temps de codage : 7min
 -->
@@ -93,7 +93,7 @@ image: ../assets/bass.jpg
 </div>
 
 <!--
-@François - 20min
+@François - 25min
 
 An entity is an object with an identity and a lifecycle.
 It is mutable, with a state that can evolve over time.
@@ -103,6 +103,8 @@ We are talking about a domain entity, with behavior and invariants that express 
 
 The invariants part is very important, as it guarantees the cohesion of the state.
 There are no setters, the only way to alter the state of the entity, is by using its behavior methods.
+
+TODO : take away (slide dédiée) + test archi
 -->
 
 
@@ -129,7 +131,7 @@ A price cannot be negative.
 </div>
 
 <!-- 
-@Thomas - 30min
+@Thomas - 40min
 
 Temps codage : 10min
 
@@ -159,13 +161,15 @@ image: ../assets/drums.jpg
 </div>
 
 <!--
-@Thomas - 40min
+@Thomas - 50min
 
-A valu Object is an object defined by its value. Two VO with the same value are equal.
+A value Object is an object defined by its value. Two VO with the same value are equal.
 
 They are immutables. We can't modify a vo, we need to create another one with the new value.
 
 They don't have a lifecyle nor do they have their own identity. They only exist in the context of another entity.
+
+TODO : take away (slide dédiée) + property archi
 -->
 
 
@@ -193,11 +197,11 @@ A proposal can be accepted or rejected (if in waiting state).
 </div>
 
 <!--
-@Bastien - 48min
+@Bastien - 60min
 
 Poser la question: proposal est-il une entité ou un VO?
 
-Temps de code : 15min
+Temps de code : 20min
 
 -->
 
@@ -225,7 +229,7 @@ image: ../assets/guitar.jpg
 </div>
 
 <!--
-@Bastien - 1h03min
+@Bastien - 1h20min
 
 An Aggregate is a cluster of Entities and Value Objects (VOs) that form a cohesive unit.
 
@@ -245,4 +249,7 @@ It defines both transactional and structural boundaries.
 No more defensive code scattered everywhere to check rules—the Aggregate handles it all.
 
 The result: Easier to test, easier to maintain.
+
+TODO : take away (slide dédiée) + property archi
+
 -->

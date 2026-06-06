@@ -7,7 +7,7 @@ class: text-center
 ## Wrap-up
 
 <!--
-@François - 1h18min
+@François - 1h35min
 
 Ok, we only scratched the surface, we didn't even talk about domain services, repositories or events.
 But that would be for another workshop (maybe season 2)
@@ -37,7 +37,7 @@ image: ../assets/guitar.jpg
 </div>
 
 <!--
-@François - 1h18min
+@François - 1h35min
 
 DDD is not a framework, but more like a toolbox, with patterns at different levels of abstraction,
 not only in code but also in the way we work together, as a culture.
@@ -57,9 +57,9 @@ backgroundSize: contain
 ---
 
 <!--
-@François - 1h22min
+@François - 1h39min
 
-Everything was here, for exemple in an event storming workshop.
+Everything was here, for example in an event storming workshop.
 This is where the strategic patterns shine. To make the domain explicit, and model it together.
 -->
 
@@ -86,7 +86,7 @@ image: ../assets/drums.jpg
 
 </div>
 <!--
-@François - 1h23min
+@François - 1h40min
 
 So what can you take away from this workshop?
 

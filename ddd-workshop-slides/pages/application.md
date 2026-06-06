@@ -89,7 +89,7 @@ image: ../assets/mixer.jpg
 </div>
 
 <!--
-@François - 2min
+@François - 7min
 
 First thing first, what are the business concepts that we talked about?
 
@@ -105,7 +105,7 @@ layout: center
 
 
 <!--
-@Thomas - 4min
+@Thomas - 9min
 
 What we've just done here is establish a common language between us, developers, and the business experts. We call this the ubiquitous language.
 
@@ -120,7 +120,7 @@ layout: center
 ![ubiquitous-language.png](../assets/ubiquitous-language.png)
 
 <!--
-@Thomas - 4min
+@Thomas - 9min
 
 
 We need to put explicit definitions to terms we use. When we're having a conversation, it can happen that we
@@ -148,7 +148,7 @@ layout: center
 ## Bounded Context
 
 <!--
-@Bastien - 6min
+@Bastien - 11min
 
 As Thomas mentioned, the same word can have different definitions and data models depending on the context.
 
@@ -171,7 +171,7 @@ layout: center
 <img src="../assets/bounded-context-en.png" alt="bounded-context" class="max-h-full max-w-full object-contain" style="max-height: 52vh;" />
 
 <!--
-@Bastien - 7min
+@Bastien - 13min
 
 So, context matters!
 
