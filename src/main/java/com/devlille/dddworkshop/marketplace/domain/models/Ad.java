@@ -7,18 +7,14 @@ import com.devlille.dddworkshop.marketplace.domain.models.exceptions.NonDecentPr
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.UnknownAdProposalException;
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDiscountPercentException;
 import com.devlille.dddworkshop.shared.domain.MusicianId;
-import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class Ad {
 
   private final AdId id;
   private final MusicianId owner;
   private final String instrument;
-  private List<Proposal> proposals;
+  private Proposals proposals;
   private Price price;
   private AdStatus status;
 
@@ -28,7 +24,7 @@ public class Ad {
     this.instrument = instrument;
     this.status = AdStatus.AVAILABLE;
     this.price = price;
-    this.proposals = List.of();
+    this.proposals = Proposals.empty();
   }
 
   public static Ad publish(MusicianId owner, String instrument, Price price)
@@ -62,16 +58,8 @@ public class Ad {
       throw new InvalidAdStatusException("Cannot make a proposal for a non-available Ad");
     }
 
-    Predicate<Proposal> isMusicianOtherProposal = (proposal) -> !proposal.getMusicianId().equals(musicianId);
-
     Proposal newProposal = Proposal.makeProposal(musicianId, desiredPrice, price);
-
-    this.proposals = Stream.concat(
-      // Remove old musician proposals
-      proposals.stream().filter(isMusicianOtherProposal),
-      // Add new proposal
-      Stream.of(newProposal)
-    ).toList();
+    this.proposals = proposals.addProposal(newProposal);
   }
 
   public void acceptMusicianProposal(MusicianId musicianId)
@@ -80,13 +68,7 @@ public class Ad {
       throw new InvalidAdStatusException("Cannot accept a proposal for a non-available Ad");
     }
 
-    Optional<Proposal> maybeProposal = findMusicianProposal(musicianId);
-
-    if (maybeProposal.isEmpty()) {
-      throw new UnknownAdProposalException("Cannot accept a proposal because it does not exist");
-    }
-
-    Proposal proposal = maybeProposal.get();
+    Proposal proposal = proposals.ofMusician(musicianId);
 
     proposal.accept();
     this.price = proposal.getDesiredPrice();
@@ -100,21 +82,10 @@ public class Ad {
       throw new InvalidAdStatusException("Cannot reject a proposal for a non-available Ad");
     }
 
-    Optional<Proposal> maybeProposal = findMusicianProposal(musicianId);
-
-    if (maybeProposal.isEmpty()) {
-      throw new UnknownAdProposalException("Cannot reject a proposal because it does not exist");
-    }
-
-    maybeProposal.get().reject();
-
+    proposals.ofMusician(musicianId).reject();
   }
 
-  private Optional<Proposal> findMusicianProposal(MusicianId musicianId) {
-    return proposals.stream()
-      .filter(proposal -> proposal.getMusicianId().equals(musicianId))
-      .findFirst();
-  }
+
 
   public AdId getId() {
     return id;
@@ -136,7 +107,7 @@ public class Ad {
     return owner;
   }
 
-  public List<Proposal> getProposals() {
+  public Proposals getProposals() {
     return proposals;
   }
 }

@@ -12,7 +12,6 @@ import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDisc
 import com.devlille.dddworkshop.shared.domain.MusicianId;
 import java.math.BigDecimal;
 import java.util.Currency;
-import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -23,11 +22,6 @@ class AdTest {
   private final MusicianId musicianId = new MusicianId(UUID.randomUUID());
   private final MusicianId anotherMusicianId = new MusicianId(UUID.randomUUID());
 
-  private static List<Proposal> getMusicianProposals(Ad ad, MusicianId musicianId1) {
-    return ad.getProposals().stream()
-      .filter(proposal -> proposal.getMusicianId().equals(musicianId1))
-      .toList();
-  }
   @Nested
   class Publish {
 
@@ -116,20 +110,21 @@ class AdTest {
     @Test
     @DisplayName("When a musician makes a proposal, it is added to the existing ones")
     void non_existing_musician_proposal()
-      throws NonDecentProposalException, InvalidAdStatusException, InvalidAdException {
+      throws NonDecentProposalException, InvalidAdStatusException, InvalidAdException, UnknownAdProposalException {
       Ad cut = Ad.publish(musicianId, "Fender American Professional 2",
         new Price(BigDecimal.valueOf(1999.99), Currency.getInstance("EUR")));
       int totalProposals = cut.getProposals().size();
 
       cut.makeProposal(musicianId, new Price(BigDecimal.valueOf(1799.99), Currency.getInstance("EUR")));
 
-      assertThat(getMusicianProposals(cut, musicianId)).hasSize(1);
-      assertThat(cut.getProposals()).hasSize(totalProposals + 1);
+      assertThat(cut.getProposals().ofMusician(musicianId)).isNotNull();
+      assertThat(cut.getProposals().size()).isEqualTo(totalProposals + 1);
     }
 
     @Test
     @DisplayName("When a musician makes a new proposal, it overrides the existing one")
-    void existing_musician_proposal() throws NonDecentProposalException, InvalidAdStatusException, InvalidAdException {
+    void existing_musician_proposal()
+      throws NonDecentProposalException, InvalidAdStatusException, InvalidAdException, UnknownAdProposalException {
       Ad cut = Ad.publish(musicianId, "Fender American Professional 2",
         new Price(BigDecimal.valueOf(1999.99), Currency.getInstance("EUR")));
       cut.makeProposal(anotherMusicianId, new Price(BigDecimal.valueOf(1895), Currency.getInstance("EUR")));
@@ -137,7 +132,7 @@ class AdTest {
 
       cut.makeProposal(musicianId, new Price(BigDecimal.valueOf(1799.99), Currency.getInstance("EUR")));
 
-      assertThat(getMusicianProposals(cut, musicianId)).hasSize(1);
+      assertThat(cut.getProposals().ofMusician(musicianId).getDesiredPrice()).isEqualTo(new Price(BigDecimal.valueOf(1799.99), Currency.getInstance("EUR")));
     }
   }
 
@@ -171,7 +166,7 @@ class AdTest {
       assertThatException()
         .isThrownBy(() -> cut.rejectMusicianProposal(new MusicianId(UUID.randomUUID())))
         .isInstanceOf(UnknownAdProposalException.class)
-        .withMessage("Cannot reject a proposal because it does not exist");
+        .withMessage("Musician doesn't have any proposal");
     }
 
     @Test
@@ -185,10 +180,7 @@ class AdTest {
 
       cut.rejectMusicianProposal(anotherMusicianId);
 
-      List<Proposal> proposals = getMusicianProposals(cut, anotherMusicianId);
-
-      assertThat(proposals).hasSize(1);
-      assertThat(proposals.getFirst().getStatus()).isEqualTo(ProposalStatus.REJECTED);
+      assertThat(cut.getProposals().ofMusician(anotherMusicianId).getStatus()).isEqualTo(ProposalStatus.REJECTED);
     }
   }
 
@@ -222,7 +214,7 @@ class AdTest {
       assertThatException()
         .isThrownBy(() -> cut.acceptMusicianProposal(new MusicianId(UUID.randomUUID())))
         .isInstanceOf(UnknownAdProposalException.class)
-        .withMessage("Cannot accept a proposal because it does not exist");
+        .withMessage("Musician doesn't have any proposal");
     }
 
     @Test
@@ -237,10 +229,7 @@ class AdTest {
 
       cut.acceptMusicianProposal(anotherMusicianId);
 
-      List<Proposal> proposals = getMusicianProposals(cut, anotherMusicianId);
-
-      assertThat(proposals).hasSize(1);
-      assertThat(proposals.getFirst().getStatus()).isEqualTo(ProposalStatus.ACCEPTED);
+      assertThat(cut.getProposals().ofMusician(anotherMusicianId).getStatus()).isEqualTo(ProposalStatus.ACCEPTED);
       assertThat(cut.getPrice()).isEqualTo(desiredPrice);
       assertThat(cut.getStatus()).isEqualTo(AdStatus.SOLD_OUT);
     }
