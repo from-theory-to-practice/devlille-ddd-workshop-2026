@@ -2,7 +2,6 @@
 layout: center
 class: text-center
 ---
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## Wrap-up
 
@@ -18,7 +17,6 @@ But that would be for another workshop (maybe season 2)
 layout: image-left
 image: ../assets/guitar.jpg
 ---
-<div class="absolute inset-y-0 right-0 w-1/2" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover; background-position: right;"></div>
 <div class="relative z-10">
 
 <br>
@@ -67,7 +65,6 @@ This is where the strategic patterns shine. To make the domain explicit, and mod
 layout: image-left
 image: ../assets/drums.jpg
 ---
-<div class="absolute inset-y-0 right-0 w-1/2" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover; background-position: right;"></div>
 <div class="relative z-10">
 
 <br>
