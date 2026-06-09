@@ -1,26 +1,19 @@
 ---
-# try also 'default' to start simple
 theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: ./assets/backgrounds/title.svg
-# some information about your slides (markdown enabled)
-title: Adeo dev summit - DDD Workshop
+title: DevLille 2026 - DDD Workshop
 info: |
   ## Slides from the DDD Workshop
 
-# apply UnoCSS classes to the current slide
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 
 ---
 
+<img src="./assets/devlille.png" class="absolute top-4 right-6 h-12 z-10" alt="DevLille" />
 
 <div class="talk-card">
   <div class="talk-card__title-wrapper">
@@ -30,11 +23,9 @@ mdc: true
     <div class="talk-card__title-word">HANDS-ON</div>
   </div>
   <div class="talk-card__subtitle">From theory to practice</div>
-</div>  
+</div>
 
-
- <style>
-
+<style>
 .talk-card__title-wrapper {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -47,7 +38,7 @@ mdc: true
 }
 
 .talk-card__title-highlight {
-  background: #9b6ee0;
+  background: #005772;
   color: #fff;
   padding: 0.12em 0.3em;
   display: inline-block;
@@ -71,48 +62,7 @@ mdc: true
   margin-top: 1.2rem;
   text-align: center;
 }
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-}
- h2 {
-    font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    background-color: #222; 
-    color: white;
-    padding: 0.8rem 2rem;
-    font-size: 2.5rem; 
-    font-weight: 900; 
-    text-transform: uppercase; 
-    letter-spacing: 0.05em;
-    clip-path: polygon(
-        2% 0%,   /* Point en haut à gauche */
-        93% 5%,  /* Point en haut à droite */
-        100% 25%, /* Point milieu-droit (haut) */
-        100% 79%, /* Point milieu-droit (bas) */
-        85% 98%, /* Point en bas à droite */
-        5% 100%,  /* Point en bas à gauche */
-        0% 75%,  /* Point milieu-gauche (bas) */
-        0% 21%   /* Point milieu-gauche (haut) */
-    );
-  }
- h3 {
-    font-family: 'Montserrat', sans-serif;
-  }
- h1 {
-    font-family: 'Montserrat', sans-serif;
-  }
- p {
-    font-family: 'Montserrat', sans-serif;
-  }
- span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-  }
-  </style>
+</style>
 
 <!--
 Are there any musicians in the room?
@@ -138,12 +88,14 @@ hide: false
 
 ---
 layout: image
-image: ../assets/backgrounds/thankyou.svg
+image: ./assets/backgrounds/thankyou.svg
 class: text-center
 ---
 
+<img src="./assets/devlille.png" class="absolute top-4 right-6 h-12 z-10" alt="DevLille" />
+
 <div class="absolute inset-0 flex flex-col items-center z-10" style="padding-top: 13%;">
-<p style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; text-transform: uppercase; letter-spacing: 3px; color: #fff; margin: 0;">To go further</p>
+<h2>To go further</h2>
 <div class="flex w-full justify-around items-start mt-8 px-4">
 <div class="flex flex-row gap-8 items-start">
 <div class="flex flex-col items-center gap-2">
@@ -158,34 +110,20 @@ class: text-center
 <div class="flex flex-col gap-6 items-start">
 <div class="flex flex-row items-center gap-4">
 <img src="./assets/francois.jpg" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
-<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">François Blarel <img src="./assets/decathlon.png" alt="decathlon" style="height: 1.2rem; width: auto;" /></span>
+<span class="speaker-tag">François Blarel</span>
 </div>
 <div class="flex flex-row items-center gap-4">
 <img src="./assets/bastien.jpg" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
-<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">Bastien Terrier <img src="./assets/decathlon.png" alt="decathlon" style="height: 1.2rem; width: auto;" /></span>
+<span class="speaker-tag">Bastien Terrier</span>
 </div>
 <div class="flex flex-row items-center gap-4">
 <img src="./assets/thomas.png" class="w-20 h-20 rounded-full object-cover" alt="speaker photo" />
-<div class="flex flex-row items-center gap-2">
-<span class="speaker-tag" style="display: inline-flex; align-items: center; gap: 0.4rem;">Thomas Smagghe <img src="./assets/adeo_services.png" alt="adeo" style="height: 1.2rem; width: auto;" /></span>
-</div>
+<span class="speaker-tag">Thomas Smagghe</span>
 </div>
 </div>
 </div>
 </div>
 
-<style>
-.speaker-tag {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #222;
-  color: white;
-  padding: 0.4rem 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  clip-path: polygon(2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%);
-}
-</style>
 
 <!--
 @Thomas - 1h28min

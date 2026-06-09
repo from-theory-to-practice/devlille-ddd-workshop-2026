@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+.slidev-layout {
+  background-color: #00465b;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout p,
+.slidev-layout span {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.slidev-layout h2 {
+  display: inline-block;
+  background-color: #FFBB3D;
+  color: #00465b;
+  padding: 0.8rem 2rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  clip-path: polygon(
+    2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%
+  );
+}
+
+.big-title h2 {
+  font-size: clamp(3rem, 7vw, 3rem);
+}
+
+.speaker-tag {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  background-color: #FFBB3D;
+  color: #00465b;
+  padding: 0.4rem 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  clip-path: polygon(
+    2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%
+  );
+}

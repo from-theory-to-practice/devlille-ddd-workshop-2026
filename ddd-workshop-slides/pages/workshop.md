@@ -1,9 +1,8 @@
 ---
 layout: center
-class: text-center
+class: text-center big-title
 ---
 
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## Hands-on
 
@@ -19,10 +18,9 @@ As we don't want to enumerate them, we are going to take a naive approach in ord
 
 ---
 layout: center
-class: text-center
+class: text-center big-title
 ---
 
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 
 ## Architecture
@@ -42,7 +40,6 @@ Show the code architecture :
 layout: center
 class: text-center
 ---
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 1. The Ad
 
@@ -73,7 +70,6 @@ image: ../assets/bass.jpg
 ---
 
 
-<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
 
 <div class="relative z-10">
 
@@ -145,7 +141,6 @@ image: ../assets/bass.jpg
 layout: center
 class: text-center
 ---
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 2. Price
 
@@ -175,7 +170,6 @@ layout: image-right
 image: ../assets/drums.jpg
 ---
 
-<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
 
 <div class="relative z-10">
 
@@ -210,7 +204,6 @@ TODO : take away (slide dédiée) + property archi
 layout: center
 class: text-center
 ---
-<div class="absolute inset-0" style="background-image: url('../assets/backgrounds/background_4.svg'); background-size: cover;"></div>
 
 ## 3. The proposal
 
@@ -242,7 +235,6 @@ Temps de code : 20min
 layout: image-right
 image: ../assets/guitar.jpg
 ---
-<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
 
 <div class="relative z-10">
 

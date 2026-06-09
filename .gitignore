@@ -35,3 +35,4 @@ build/
 .jqwik-database
 /skills-lock.json
 /.agents/
+/.claude/
