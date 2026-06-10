@@ -104,8 +104,41 @@ We are talking about a domain entity, with behavior and invariants that express 
 The invariants part is very important, as it guarantees the cohesion of the state.
 There are no setters, the only way to alter the state of the entity, is by using its behavior methods.
 
-TODO : take away (slide dédiée) + test archi
+ - Show archunit tests
 -->
+---
+layout: image-right
+image: ../assets/bass.jpg
+---
+
+<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
+
+<div class="relative z-10">
+
+<br>
+<br>
+
+## Entity
+
+<br>
+<br>
+<br>
+
+<h3 v-click>enforce invariants</h3>
+<h3 v-click>increase consistency</h3>
+<h3 v-click>decrease defensive code</h3>
+<h3 v-click>prevent anemic objects</h3>
+
+</div>
+
+
+<!-- 
+@François - 35min
+
+-->
+
+
+
 
 
 ---
