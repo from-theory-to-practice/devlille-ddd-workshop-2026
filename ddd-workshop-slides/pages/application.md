@@ -152,7 +152,9 @@ class: text-center
 layout: center
 ---
 
-<img src="../assets/bounded-context-en.png" alt="bounded-context" class="max-h-full max-w-full object-contain" style="max-height: 52vh;" />
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="../assets/bounded-context.jpg" alt="bounded-context" class="h-full w-auto object-contain" />
+</div>
 
 <!--
 @Bastien - 13min

@@ -6,6 +6,25 @@ class: text-center big-title
 
 ## Hands-on
 
+<div class="mt-14">
+<a href="https://tinyurl.com/devlille-ddd" target="_blank" class="workshop-link">💻 tinyurl.com/devlille-ddd</a>
+</div>
+
+<style>
+.workshop-link {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #00465b !important;
+  padding: 0.7rem 2rem;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  border: none !important;
+  clip-path: polygon(
+    2% 0%, 93% 5%, 100% 25%, 100% 79%, 85% 98%, 5% 100%, 0% 75%, 0% 21%
+  );
+}
+</style>
 
 <!--
 @François - 13min
@@ -107,8 +126,6 @@ layout: image-right
 image: ../assets/bass.jpg
 ---
 
-<div class="absolute inset-0 w-1/2" style="background-image: url('../assets/backgrounds/background_3.svg'); background-size: cover;"></div>
-
 <div class="relative z-10">
 
 <br>
@@ -197,6 +214,36 @@ They are immutables. We can't modify a vo, we need to create another one with th
 They don't have a lifecyle nor do they have their own identity. They only exist in the context of another entity.
 
 TODO : take away (slide dédiée) + property archi
+-->
+
+---
+layout: image-right
+image: ../assets/bass.jpg
+---
+
+
+<div class="relative z-10">
+
+<br>
+<br>
+
+## Value object
+
+<br>
+<br>
+<br>
+
+<h3 v-click>clarify the domain</h3>
+<h3 v-click>validation centralized</h3>
+<h3 v-click>reusable</h3>
+<h3 v-click>easily testable</h3>
+
+</div>
+
+
+<!-- 
+@François - 35min
+
 -->
 
 
