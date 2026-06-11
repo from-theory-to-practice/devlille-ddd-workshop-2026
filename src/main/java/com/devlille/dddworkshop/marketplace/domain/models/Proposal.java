@@ -17,7 +17,7 @@ public class Proposal {
     this.status = ProposalStatus.WAITING;
   }
 
-  public static Proposal makeProposal(MusicianId musicianId, Price desiredPrice, Price originalAdPrice)
+  static Proposal makeProposal(MusicianId musicianId, Price desiredPrice, Price originalAdPrice)
     throws NonDecentProposalException {
     float priceRatio = desiredPrice.amount().floatValue() / originalAdPrice.amount().floatValue();
     if (priceRatio < DECENT_THRESHOLD_RATIO) {
