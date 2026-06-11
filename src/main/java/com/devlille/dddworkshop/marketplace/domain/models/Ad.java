@@ -2,6 +2,7 @@ package com.devlille.dddworkshop.marketplace.domain.models;
 
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdException;
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdStatusException;
+import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDiscountPercentException;
 import com.devlille.dddworkshop.shared.domain.MusicianId;
 import java.util.UUID;
 
@@ -39,7 +40,7 @@ public class Ad {
     this.status = AdStatus.SOLD_OUT;
   }
 
-  public void applyDiscount(float percentage) {
+  public void applyDiscount(float percentage) throws InvalidDiscountPercentException {
     price = price.discount(percentage);
   }
 

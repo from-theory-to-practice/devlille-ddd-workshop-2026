@@ -1,10 +1,12 @@
 package com.devlille.dddworkshop.marketplace.domain.models;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatException;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDiscountPercentException;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.stream.Stream;
@@ -29,9 +31,10 @@ class PriceTest {
   void discountMustBePositive(@ForAll @Negative int negativeDiscount) {
     Price cut = new Price(BigDecimal.valueOf(30), EUR);
 
-    assertThatIllegalArgumentException()
+    assertThatException()
       .isThrownBy(() -> cut.discount(negativeDiscount))
-      .withMessage("Discount amount must be greater than 0");
+      .isInstanceOf(InvalidDiscountPercentException.class)
+      .withMessage("Discount percent must be greater than 0");
   }
 
   @Property
@@ -39,15 +42,16 @@ class PriceTest {
   void discountMustBeLowerThan100(@ForAll @IntRange(min = 101) int discount) {
     Price cut = new Price(BigDecimal.valueOf(30), EUR);
 
-    assertThatIllegalArgumentException()
+    assertThatException()
       .isThrownBy(() -> cut.discount(discount))
-      .withMessage("Discount amount must be lower than 100");
+      .isInstanceOf(InvalidDiscountPercentException.class)
+      .withMessage("Discount percent must be lower than 100");
   }
 
   @Property
   @Label("Discounted price must be lower than original one")
   void discountedPriceMustBeLowerThanOriginal(@ForAll @BigRange(min = "1", max = "9999") BigDecimal amount,
-    @ForAll @IntRange(min = 1, max = 100) int discount) {
+    @ForAll @IntRange(min = 1, max = 100) int discount) throws InvalidDiscountPercentException {
     Price cut = new Price(amount, EUR);
 
     Price discountedPrice = cut.discount(discount);
@@ -84,7 +88,7 @@ class PriceTest {
 
     @ParameterizedTest
     @MethodSource("discount")
-    void success(BigDecimal amount, float discount, BigDecimal expected) {
+    void success(BigDecimal amount, float discount, BigDecimal expected) throws InvalidDiscountPercentException {
       Price cut = new Price(amount, EUR);
 
       Price discountedPrice = cut.discount(discount);

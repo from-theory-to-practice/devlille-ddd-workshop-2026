@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatException;
 
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdException;
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdStatusException;
+import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDiscountPercentException;
 import com.devlille.dddworkshop.shared.domain.MusicianId;
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -44,7 +45,7 @@ class AdTest {
 
     @Test
     @DisplayName("When applying discount, the price is updated")
-    void applyDiscount() throws InvalidAdException {
+    void applyDiscount() throws InvalidAdException, InvalidDiscountPercentException {
       Price originalPrice = new Price(new BigDecimal("1999.99"), Currency.getInstance("EUR"));
       Ad cut = Ad.publish(musicianId, "Fender American Professional 2", originalPrice);
 
