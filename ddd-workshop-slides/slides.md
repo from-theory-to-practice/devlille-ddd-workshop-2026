@@ -97,14 +97,18 @@ class: text-center
 <div class="absolute inset-0 flex flex-col items-center z-10" style="padding-top: 13%;">
 <h2>To go further</h2>
 <div class="flex w-full justify-around items-start mt-8 px-4">
-<div class="flex flex-row gap-8 items-start">
+<div class="flex flex-row gap-6 items-start">
 <div class="flex flex-col items-center gap-2">
 <span class="speaker-tag">Resources 📜</span>
-<img src="./assets/resources_qr_code.svg" class="w-36 h-36" alt="resources QR code" />
+<img src="./assets/resources_qr_code.svg" class="w-32 h-32" alt="resources QR code" />
 </div>
 <div class="flex flex-col items-center gap-2">
 <span class="speaker-tag">Quiz ❓</span>
-<img src="./assets/quiz_qr_code.svg" class="w-36 h-36" alt="quiz QR code" />
+<img src="./assets/quiz_qr_code.svg" class="w-32 h-32" alt="quiz QR code" />
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="speaker-tag">Feedback 💬</span>
+<img src="./assets/feedback_qr_code.svg" class="w-32 h-32" alt="feedback QR code" />
 </div>
 </div>
 <div class="flex flex-col gap-6 items-start">
