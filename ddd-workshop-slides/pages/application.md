@@ -134,16 +134,17 @@ layout: center
 <!--
 @Bastien - 11min
 
-As Thomas mentioned, the same word can have different definitions and data models depending on the context.
+Comme l'a dit Thomas, un même mot peut avoir différentes définitions et modèles de données, en fonction du context.
 
-Let’s take a book as an example:
-- For the Publisher (Catalog/Sales Context): It is a commercial product. It is defined by an ISBN, title, author, price, genre, and publication date.
-- For the Carrier (Logistics Context): It is a physical package. The story inside doesn't matter. What matters is weight, dimensions, a tracking barcode, and a destination pallet.
-- For the Writer (Creation Context): It is a manuscript. It is defined by word count, chapters, characters, and a progress status (draft, edited, approved).
+Prenons l'exemple d'un livre
+- Editeur (Contexte de Vente): C'est un produit commercial: ISBN, titre, auteur, prix, genre, date de publication.
+- Transporteur (Context de Logistique): C'est un produit physique, un colis. L'histoire ne compte pas.  poids, dimensions, tracking barcode, palette de destination.
+- Ecrivain (Contexte de Création): C'est un Manuscrit: nombre de mots, chapitres, personnages, état de progression  (brouillon, edité, approuvé).
 
-This is why we define Bounded Contexts. A Bounded Context is an explicit boundary where a specific data model and Ubiquitous Language apply.
+C'est pour ça qu'on définit les Bounded Contexts.
+Un Bounded Context c'est la frontière explicite à l'intérieur de laquelle un modèle de données spécifique et Ubiquitous Language s'appliquent.
 
-➔ The goal: No more "God Objects"—that giant, bloated data model where we try to force everything to fit.
+➔ Le but: plus de "God Objects"—C'est énorme modèle de données dans lequel on veut tout faire rentrer de force.
 
 -->
 
@@ -159,8 +160,7 @@ layout: center
 <!--
 @Bastien - 13min
 
-So, context matters!
+Le context c'est important !
 
-Still not convinced?
-
+Toujours pas convaincu ?
 -->

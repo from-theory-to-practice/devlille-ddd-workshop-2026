@@ -242,7 +242,7 @@ image: ../assets/bass.jpg
 
 
 <!-- 
-@François - 35min
+@Thomas - 55min
 
 -->
 
@@ -303,25 +303,54 @@ image: ../assets/guitar.jpg
 <!--
 @Bastien - 1h20min
 
-An Aggregate is a cluster of Entities and Value Objects (VOs) that form a cohesive unit.
-
-The Aggregate Root is responsible for its business rules (invariants). It guarantees the consistency of the entire group.
-
-It defines both transactional and structural boundaries.
-
-- structural boundary: 
-  - It acts as the single entry point to access any internal Entity or VO.
-  - if you remove the Ad, the proposals are removed to. 
-  - You do not access the proposal directly: you need to ask the Ad.
-- transactional boundary:
-  - Immediate consistency: everything or nothing
-  - when you accept a musician proposal for a given ad, the ad price is updated and the Ad is sold, in the exact same time in your database.
-  - without aggregate: if the application crashes while accepting the proposal, the price would be updated; proposal accepted but Ad would still be available.
+ Un Agrégat est un ensemble d'Entités et d'Objets Valeurs (Value Objects) qui forment une unité cohérente.
  
-No more defensive code scattered everywhere to check rules—the Aggregate handles it all.
+ La Racine d'Agrégat (Aggregate Root) est responsable de ses propres règles métiers (les invariants). Elle garantit la cohérence de l'ensemble du groupe.
+ 
+ Elle définit à la fois des frontières structurelles et transactionnelles.
+ 
+ Frontière structurelle :
+  - Point d'entrée unique : Elle sert de point d'entrée unique pour accéder à n'importe quelle Entité ou Objet Valeur interne.
+  - Cycle de vie lié : Si vous supprimez l'Annonce (Ad), les propositions (proposals) sont également supprimées.
+  - Accès indirect : Vous n'accédez pas directement à la proposition : vous devez obligatoirement passer par l'Annonce.
+ 
+ Frontière transactionnelle :
+  - Cohérence immédiate : C'est du "tout ou rien".
+  -  Exemple : Lorsque vous acceptez la proposition d'un musicien pour une annonce donnée, le prix de l'annonce est mis à jour et l'annonce passe au statut "vendue" exactement au même moment (dans la même transaction) en base de données.
+  -  Sans agrégat : Si l'application plante pendant l'acceptation de la proposition, le prix pourrait être mis à jour et la proposition acceptée, mais l'annonce resterait toujours disponible (générant une incohérence).
+ 
+ -->
 
-The result: Easier to test, easier to maintain.
 
-TODO : take away (slide dédiée) + property archi
+---
+layout: image-right
+image: ../assets/drums.jpg
+---
 
+<div class="relative z-10">
+
+<br>
+<br>
+
+## The Aggregate
+
+<br>
+<br>
+<br>
+
+<h3 v-click>secure multi-object invariants</h3>
+<h3 v-click>consistency everywhere, no more defensive code</h3>
+<h3 v-click>easier to test, easier to maintain</h3>
+</div>
+
+<!--
+@Bastien - 1h32min
+
+L'entité gère ses propres invariants, mais dès qu'une règle métier dit "Si l'entité A fait ceci, alors l'entité B doit faire cela", c'est l'agrégat qui prend le relais.
+Eg. Lorsqu'une offre est acceptée, toutes les autres sont refusées
+
+Plus de code défensif éparpillé partout pour valider les contraintes. C'est l'aggrégat qui s'en charge.
+Eg. Plus "if not null" -> on a toujours un état cohérent
+
+Résultat: plus facile à tester et maintenir
 -->
