@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatException;
 
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdException;
 import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidAdStatusException;
+import com.devlille.dddworkshop.marketplace.domain.models.exceptions.InvalidDiscountPercentException;
 import com.devlille.dddworkshop.shared.domain.MusicianId;
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -15,9 +16,7 @@ import org.junit.jupiter.api.Test;
 
 class AdTest {
 
-  private static final MusicianId MUSICIAN_ID = new MusicianId(UUID.randomUUID());
-  private static final BigDecimal PRICE = new BigDecimal("1999.99");
-  private static final Currency EUR = Currency.getInstance("EUR");
+  private final MusicianId musicianId = new MusicianId(UUID.randomUUID());
 
   @Nested
   class Publish {
@@ -26,7 +25,7 @@ class AdTest {
     @DisplayName("When publishing an Ad with invalid Instrument, it throws an exception")
     void invalid_instrument() {
       assertThatException()
-        .isThrownBy(() -> Ad.publish(MUSICIAN_ID, "", PRICE, EUR))
+        .isThrownBy(() -> Ad.publish(musicianId, "", new Price(new BigDecimal("1999.99"), Currency.getInstance("EUR"))))
         .isInstanceOf(InvalidAdException.class)
         .withMessageContaining("Instrument cannot be blank");
     }
@@ -34,12 +33,28 @@ class AdTest {
     @Test
     @DisplayName("When publishing an Ad, the status is Available")
     void success() throws InvalidAdException {
-      Ad cut = Ad.publish(MUSICIAN_ID, "Fender American Professional 2", PRICE, EUR);
+      Ad cut = Ad.publish(musicianId, "Fender American Professional 2", new Price(new BigDecimal("1999.99"), Currency.getInstance("EUR")));
 
       assertThat(cut.getStatus()).isEqualTo(AdStatus.AVAILABLE);
     }
-
   }
+
+
+  @Nested
+  class Discount {
+
+    @Test
+    @DisplayName("When applying discount, the price is updated")
+    void applyDiscount() throws InvalidAdException, InvalidDiscountPercentException {
+      Price originalPrice = new Price(new BigDecimal("1999.99"), Currency.getInstance("EUR"));
+      Ad cut = Ad.publish(musicianId, "Fender American Professional 2", originalPrice);
+
+      cut.applyDiscount(20f);
+
+      assertThat(cut.getPrice()).isNotEqualTo(originalPrice);
+    }
+  }
+
 
   @Nested
   class Sell {
@@ -47,7 +62,8 @@ class AdTest {
     @Test
     @DisplayName("When successfully selling an Ad, it is now SOLD_OUT")
     void success() throws InvalidAdStatusException, InvalidAdException {
-      Ad cut = Ad.publish(MUSICIAN_ID, "Fender American Professional 2", PRICE, EUR);
+      Ad cut = Ad.publish(musicianId, "Fender American Professional 2", new Price(new BigDecimal("1999.99"),
+        Currency.getInstance("EUR")));
 
       cut.sell();
 
@@ -57,7 +73,8 @@ class AdTest {
     @Test
     @DisplayName("When selling a non-available Ad, it throws an exception")
     void nonAvailableAd() throws InvalidAdStatusException, InvalidAdException {
-      Ad cut = Ad.publish(MUSICIAN_ID, "Fender American Professional 2", PRICE, EUR);
+      Ad cut = Ad.publish(musicianId, "Fender American Professional 2", new Price(new BigDecimal("1999.99"),
+        Currency.getInstance("EUR")));
 
       cut.sell();
 
