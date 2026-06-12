@@ -12,7 +12,6 @@ Implement a simple domain model for the Ad entity based on the following require
 ### 1. Create the Ad class
 
 - Create an `Ad` class with the following properties:
-  - `title`: string
   - `instrument`: string (for simplicity, we use a string to represent the instrument)
   - `price`: BigDecimal
   - `owner`: MusicianId (a reference to a musician)
