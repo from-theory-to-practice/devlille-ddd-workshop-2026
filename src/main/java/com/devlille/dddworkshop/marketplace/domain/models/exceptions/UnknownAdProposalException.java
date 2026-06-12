@@ -1,0 +1,8 @@
+package com.devlille.dddworkshop.marketplace.domain.models.exceptions;
+
+public class UnknownAdProposalException extends Exception {
+
+  public UnknownAdProposalException(String message) {
+    super(message);
+  }
+}
