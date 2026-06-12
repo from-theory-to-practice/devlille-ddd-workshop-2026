@@ -339,8 +339,8 @@ image: ../assets/drums.jpg
 <br>
 
 <h3 v-click>secure multi-object invariants</h3>
-<h3 v-click>consistency everwhere, no more defensive code</h3>
-<h3 v-click>rasier to test, easier to maintain</h3>
+<h3 v-click>consistency everywhere, no more defensive code</h3>
+<h3 v-click>easier to test, easier to maintain</h3>
 </div>
 
 <!--
