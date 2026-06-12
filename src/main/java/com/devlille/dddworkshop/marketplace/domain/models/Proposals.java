@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class Proposals {
 
-  private List<Proposal> value;
+  private final List<Proposal> value;
 
   public Proposals(List<Proposal> proposals) {
     this.value = proposals;
@@ -21,7 +21,7 @@ public class Proposals {
   public Proposals addProposal(Proposal proposal){
     Predicate<Proposal> isMusicianOtherProposal = (p) -> !p.getMusicianId().equals(proposal.getMusicianId());
 
-    return new Proposals(this.value = Stream.concat(
+    return new Proposals(Stream.concat(
       // Remove old musician proposals
       value.stream().filter(isMusicianOtherProposal),
       // Add new proposal

@@ -45,10 +45,10 @@ class ProposalsTest {
         new Price(BigDecimal.valueOf(150), EUR)
       );
 
-      cut.addProposal(proposal);
+      Proposals addedProposal = cut.addProposal(proposal);
 
-      assertThat(cut.size()).isEqualTo(1);
-      assertThat(cut.ofMusician(musicianId)).isEqualTo(proposal);
+      assertThat(addedProposal.size()).isEqualTo(1);
+      assertThat(addedProposal.ofMusician(musicianId)).isEqualTo(proposal);
     }
 
     @Test
@@ -73,14 +73,14 @@ class ProposalsTest {
         new Price(BigDecimal.valueOf(150), EUR)
       );
 
-      cut.addProposal(firstProposal);
-      cut.addProposal(otherMusicianProposal);
-      cut.addProposal(replacementProposal);
+      Proposals addedProposals = cut.addProposal(firstProposal)
+      .addProposal(otherMusicianProposal)
+      .addProposal(replacementProposal);
 
-      assertThat(cut.size()).isEqualTo(2);
-      assertThat(cut.ofMusician(musicianId)).isEqualTo(replacementProposal);
-      assertThat(cut.ofMusician(anotherMusicianId)).isEqualTo(otherMusicianProposal);
-      assertThat(cut.ofMusician(musicianId).getDesiredPrice()).isEqualTo(replacementProposal.getDesiredPrice());
+      assertThat(addedProposals.size()).isEqualTo(2);
+      assertThat(addedProposals.ofMusician(musicianId)).isEqualTo(replacementProposal);
+      assertThat(addedProposals.ofMusician(anotherMusicianId)).isEqualTo(otherMusicianProposal);
+      assertThat(addedProposals.ofMusician(musicianId).getDesiredPrice()).isEqualTo(replacementProposal.getDesiredPrice());
     }
   }
 }
